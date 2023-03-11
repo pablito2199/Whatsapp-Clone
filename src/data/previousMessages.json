@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "image": "user1",
+        "unread": 2,
+        "messages": [
+            {
+                "id": 0,
+                "message": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.",
+                "timestamp": "10:00",
+                "fromMe": false
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "image": "user1",
+        "time": "Yesterday",
+        "unread": 0,
+        "messages": [
+            {
+                "id": 0,
+                "message": "BLAAAA.",
+                "timestamp": "Yesterday",
+                "fromMe": false
+            },
+            {
+                "id": 1,
+                "message": "asdasdaaaaaaaaaaaaa aasdasdasd sadsasdasd daaaaaaaaaaaaaaaaaas.",
+                "timestamp": "Yesterday",
+                "fromMe": true
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Bob Johnson",
+        "image": "user1",
+        "unread": 1,
+        "messages": [
+            {
+                "id": 0,
+                "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "timestamp": "Friday",
+                "fromMe": true
+            }
+        ]
+    }
+]
