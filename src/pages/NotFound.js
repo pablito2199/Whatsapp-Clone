@@ -32,7 +32,7 @@ export default function NotFound() {
                 <div className="max-w-md">
                     <p className="text-2xl md:text-3xl font-light leading-normal">Lo sentimos, no se pudo encontrar esta página.</p>
                     <p className="mb-4">Volverás a la página principal en {timeout} segundos</p>
-                    <button onClick={() => navigate('/')} className="px-4 inline py-2 text-sm font-medium leading-5 shadow text-white transition-colors duration-150 border border-transparent focus:outline-none focus:shadow-outline-teal bg-intro-border active:bg-teal-800 hover:bg-teal-800">Volver a la página principal</button>
+                    <button onClick={() => navigate('/')} className="px-4 inline py-2 text-sm font-medium leading-5 shadow text-white transition-colors duration-150 border border-transparent focus:outline-none focus:shadow-outline-teal bg-message-dark active:bg-teal-800 hover:bg-teal-800">Volver a la página principal</button>
                 </div>
                 <div className="max-w-lg">
                     <img alt="Page not found" src={imagen} className='h-28 w-28' />

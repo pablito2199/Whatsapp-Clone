@@ -1,19 +1,27 @@
 module.exports = {
-  mode: "jit",
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        'intro-background': '#222e35',
-        'intro-border': '#008069',
-        'unread': '#00a884',
-        'app-background': '#111b21'
-      }
-    },
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+	content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+	darkMode: "class",
+	mode: "jit",
+	purge: {
+		content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+	},
+	plugins: [],
+	theme: {
+		extend: {
+			colors: {
+				'app-background': '#111b21',
+				'intro-background': '#222e35',
+				'message-dark': '#008069',
+				'message-light': '#c0ffb0',
+				'unread-dark': '#00a884',
+				'unread-light': '#25d366'
+			},
+			scrollbar: {
+				width: '6px',
+			}
+		}
+	},
+	variants: {
+		extend: {},
+	},
 };

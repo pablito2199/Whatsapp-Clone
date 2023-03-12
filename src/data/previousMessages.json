@@ -3,7 +3,7 @@
         "id": 1,
         "name": "John Doe",
         "image": "user1",
-        "unread": 2,
+        "isSelected": false,
         "messages": [
             {
                 "id": 0,
@@ -11,14 +11,16 @@
                 "timestamp": "10:00",
                 "fromMe": false
             }
-        ]
+        ],
+        "online": "online",
+        "unread": 2
     },
     {
         "id": 2,
         "name": "Jane Smith",
         "image": "user1",
+        "isSelected": false,
         "time": "Yesterday",
-        "unread": 0,
         "messages": [
             {
                 "id": 0,
@@ -32,20 +34,23 @@
                 "timestamp": "Yesterday",
                 "fromMe": true
             }
-        ]
+        ],
+        "unread": 0
     },
     {
         "id": 3,
         "name": "Bob Johnson",
         "image": "user1",
-        "unread": 1,
+        "isSelected": false,
         "messages": [
             {
                 "id": 0,
                 "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "timestamp": "Friday",
+                "timestamp": "11/03/2023",
                 "fromMe": true
             }
-        ]
+        ],
+        "online": "last seen Mar 10, 2023",
+        "unread": 1
     }
 ]

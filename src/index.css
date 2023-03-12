@@ -3,7 +3,53 @@
 @tailwind utilities;
 
 .chat-background {
-    background-image: url('./images/whatsapp-background.png');
+    background-image: url('./images/whatsapp-background-light.png');
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.dark .chat-background {
+    background-image: url('./images/whatsapp-background-dark.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.no-chat-selected {
+    background-image: url('./images/no-chat-selected-light.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.dark .no-chat-selected {
+    background-image: url('./images/no-chat-selected-dark.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #111b21;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #222e35;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
 }

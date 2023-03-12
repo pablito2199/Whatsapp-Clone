@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<div className='flex flex-row'>
+			<div className='flex flex-row font-whatsapp'>
 				<Routes>
 					<Route exact path="/" element={<Home />} />
 					<Route exact path="/404" element={<NotFound />} />

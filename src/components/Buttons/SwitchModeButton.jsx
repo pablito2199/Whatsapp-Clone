@@ -13,7 +13,7 @@ export default function SwitchModeButton() {
                 ?
                 <FontAwesomeIcon icon={faMoon} className="h-6 w-6 p-2 border-2 border-black rounded-full" title="Dark mode" />
                 :
-                <FontAwesomeIcon icon={faSun} className="h-6 w-6 p-2 border-2 border-gray-100 rounded-full text-gray-100" title="Light mode" />
+                <FontAwesomeIcon icon={faSun} className="h-6 w-6 p-2 border-2 border-yellow-300 rounded-full text-yellow-300" title="Light mode" />
         }
     </button>
 }
