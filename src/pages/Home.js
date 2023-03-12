@@ -13,8 +13,16 @@ export default function Home() {
 
 	const [selectedChatId, setSelectedChatId] = useState(null);
 	const [chatList, setChatList] = useState(() => {
-		const savedChatList = localStorage.getItem('chatList');
-		return savedChatList ? JSON.parse(savedChatList) : previousMessages
+		let savedChatList = localStorage.getItem('chatList');
+		if (savedChatList) {
+			savedChatList = JSON.parse(savedChatList);
+			const prevSelectedChat = savedChatList.find(c => c.isSelected);
+			if (prevSelectedChat) {
+				prevSelectedChat.isSelected = false;
+			}
+			return savedChatList;
+		}
+		return previousMessages;
 	});
 
 	return <div className="relative">

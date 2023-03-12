@@ -11,6 +11,14 @@ export default function ChatContent({ chatId, chatList, setChatList }) {
     const chatContainer = useRef(null);
 
     useEffect(() => {
+        chatContainer.current.scrollTo({
+            top: chatContainer.current.scrollHeight,
+            behavior: "smooth"
+        });
+    }, [chat]);
+
+
+    useEffect(() => {
         const height = containerRef.current.clientHeight;
         containerRef.current.style.maxHeight = `${height}px`;
     }, []);

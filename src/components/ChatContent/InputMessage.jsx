@@ -1,18 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperclip, faMicrophone, faCamera, faFile, faUser, faSquarePollVertical, faImages, faStickyNote } from "@fortawesome/free-solid-svg-icons";
 import { faSmile } from '@fortawesome/free-regular-svg-icons';
 import DropDownItem from "./DropDownItem";
 import ReactTextareaAutosize from "react-textarea-autosize";
+import EmojiPicker from "../EmojiPicker";
 
 export default function InputMessage({ message, handleSendMessage, setMessage }) {
 
     const [showDropDown, setShowDropDown] = useState(false);
+    const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+    const pickerRef = useRef(null);
 
-    return <div className="dark:border-t p-1 border-gray-700 bg-gray-100 dark:bg-app-background">
-        <div className="flex justify-between items-center bg-gray-100 dark:bg-app-background py-2 px-4 w-full">
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (pickerRef.current && !pickerRef.current.contains(event.target)) {
+                setShowEmojiPicker(false);
+            }
+        }
+
+        document.addEventListener("click", handleClickOutside);
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, [pickerRef]);
+
+    const handleEmojiClick = (emoji) => {
+        setMessage(message + emoji.native);
+    };
+
+    return <div className="dark:border-t p-1 border-gray-700 bg-gray-100 dark:bg-intro-background">
+        <div className="flex justify-between items-center bg-gray-100 dark:bg-intro-background py-2 px-4 w-full">
             <div className="flex items-center w-full">
-                <FontAwesomeIcon icon={faSmile} className="text-gray-500 h-6 mr-4 cursor-pointer" />
+                <div ref={pickerRef} className="relative">
+                    <FontAwesomeIcon icon={faSmile} onClick={() => { setShowDropDown(false); setShowEmojiPicker(!showEmojiPicker) }} className="text-gray-500 h-6 mr-4 cursor-pointer" />
+                    {showEmojiPicker && <div className="absolute bottom-10"><EmojiPicker onEmojiClick={handleEmojiClick} /></div>}
+                </div>
                 <div className="relative">
                     <FontAwesomeIcon icon={faPaperclip} title="Attach" className="text-gray-500 h-6 mr-4 cursor-pointer" onClick={() => setShowDropDown(!showDropDown)} />
                     {
@@ -31,7 +54,7 @@ export default function InputMessage({ message, handleSendMessage, setMessage })
                 <ReactTextareaAutosize
                     type="text"
                     placeholder="Type a message here"
-                    className="w-full outline-none rounded-lg p-4 resize-none overflow-hidden overflow-y-hidden max-h-32 dark:bg-intro-background dark:caret-gray-200 dark:text-gray-200"
+                    className="w-full outline-none rounded-lg p-4 resize-none overflow-hidden overflow-y-hidden max-h-32 dark:bg-gray-700 dark:caret-gray-200 dark:text-gray-200"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     onKeyDown={handleSendMessage}

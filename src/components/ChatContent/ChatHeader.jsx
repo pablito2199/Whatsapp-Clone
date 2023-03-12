@@ -5,7 +5,7 @@ import user1 from '../../images/user1.jpg'
 export default function ChatHeader({ chatId, chatList }) {
 
     const chat = chatList.find((c) => c.id === chatId);
-    console.log(chat.online);
+
     return <div className="flex py-2 px-4 dark:border-b border-gray-700 bg-gray-100 dark:bg-intro-background dark:text-white items-center">
         <img alt={chat.name} src={user1} className="w-10 h-10 rounded-full mr-3" />
         <div className="flex flex-col">
