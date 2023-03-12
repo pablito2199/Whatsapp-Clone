@@ -14,6 +14,7 @@ export default function Chat({ chat, chatList, setChatList, setSelectedChatId })
         chat.unread = 0;
         setSelectedChatId(chat.id);
         setChatList([...chatList]);
+        localStorage.setItem('chatList', JSON.stringify(chatList));
     }
 
     return <div key={chat.id}
