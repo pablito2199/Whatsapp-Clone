@@ -12,7 +12,10 @@ import previousMessages from "../data/previousMessages.json"
 export default function Home() {
 
 	const [selectedChatId, setSelectedChatId] = useState(null);
-	const [chatList, setChatList] = useState(previousMessages);
+	const [chatList, setChatList] = useState(() => {
+		const savedChatList = localStorage.getItem('chatList');
+		return savedChatList ? JSON.parse(savedChatList) : previousMessages
+	});
 
 	return <div className="relative">
 		<div className="bg-emerald-500 w-full h-[17.5%] z-10 fixed top-0 left-0 w-full h-1/5 transition-all"></div>

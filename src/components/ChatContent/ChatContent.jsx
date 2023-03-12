@@ -39,6 +39,7 @@ export default function ChatContent({ chatId, chatList, setChatList }) {
 
             chat.messages.push(messageData);
             setChatList([...chatList]);
+            localStorage.setItem('chatList', JSON.stringify(chatList));
 
             setMessage("");
 
