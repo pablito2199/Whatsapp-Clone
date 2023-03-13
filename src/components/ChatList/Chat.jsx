@@ -2,24 +2,11 @@ import React from "react";
 
 import user1 from '../../images/user1.jpg'
 
-export default function Chat({ chat, chatList, setChatList, setSelectedChatId }) {
-
-    const handleClick = () => {
-        const prevSelectedChat = chatList.find(c => c.isSelected);
-        if (prevSelectedChat) {
-            prevSelectedChat.isSelected = false;
-        }
-
-        chat.isSelected = true;
-        chat.unread = 0;
-        setSelectedChatId(chat.id);
-        setChatList([...chatList]);
-        localStorage.setItem('chatList', JSON.stringify(chatList));
-    }
+export default function Chat({ chat, handleClick }) {
 
     return <div key={chat.id}
         className={`p-4 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer relative ${chat.isSelected ? "bg-gray-100 dark:bg-gray-800" : ""}`}
-        onClick={handleClick}>
+        onClick={() => handleClick(chat)}>
         <div className="flex justify-between items-center">
             <div className="flex items-center max-w-[100%] space-x-2">
                 <img alt={chat.name} src={user1} className='h-12 w-12 rounded-full' />

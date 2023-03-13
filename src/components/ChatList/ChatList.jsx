@@ -2,12 +2,12 @@ import React from "react";
 
 import Chat from "./Chat";
 
-export default function ChatList({ chatList, setChatList, setSelectedChatId }) {
+export default function ChatList({ chatList, handleClick }) {
 
     return <div className="w-full shadow-md divide-y dark:divide-gray-700 bg-white dark:bg-app-background">
         {
-            chatList.map((chat, index) => (
-                <Chat key={chat.id} chat={chat} chatList={chatList} setChatList={setChatList} setSelectedChatId={setSelectedChatId} />
+            chatList.map(chat => (
+                <Chat key={chat.id} chat={chat} handleClick={handleClick} />
             ))
         }
     </div>
