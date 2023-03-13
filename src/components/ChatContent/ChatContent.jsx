@@ -17,12 +17,6 @@ export default function ChatContent({ chatId, chatList, setChatList }) {
         });
     }, [chat]);
 
-
-    useEffect(() => {
-        const height = containerRef.current.clientHeight;
-        containerRef.current.style.maxHeight = `${height}px`;
-    }, []);
-
     function formatMessage(message) {
         return message.replace(/\n/g, '<br>');
     }
@@ -35,8 +29,7 @@ export default function ChatContent({ chatId, chatList, setChatList }) {
             setMessage(message + '\n');
         } else if (!(e.shiftKey && e.key === 'Enter') && e.key === "Enter" && !regexSpaces.test(message)) {
             const now = new Date();
-            const options = { hour: 'numeric', minute: 'numeric' };
-            const timestamp = now.toLocaleString('es-ES', options);
+            const timestamp = now.toLocaleTimeString([], { hour: "numeric", minute: "numeric" });
 
             const messageData = {
                 "id": chat.messages.length,
@@ -46,7 +39,13 @@ export default function ChatContent({ chatId, chatList, setChatList }) {
             };
 
             chat.messages.push(messageData);
-            setChatList([...chatList]);
+            setChatList((prevChatList) => {
+                const updatedChatList = [...prevChatList];
+                const chatIndex = updatedChatList.findIndex((c) => c.id === chatId);
+                updatedChatList[chatIndex] = chat;
+                localStorage.setItem("chatList", JSON.stringify(updatedChatList));
+                return updatedChatList;
+            });
             localStorage.setItem('chatList', JSON.stringify(chatList));
 
             setMessage("");
@@ -64,7 +63,7 @@ export default function ChatContent({ chatId, chatList, setChatList }) {
                 {
                     chat.messages.map((m, index) => {
                         if (!m.fromMe) {
-                            return <div key={m.id} className="w-full flex flex-col justify-end">
+                            return <div key={"mR" + m.id} className="w-full flex flex-col justify-end">
                                 <div className="max-w-[66.66%] mr-auto">
                                     <div className="bg-gray-100 dark:bg-intro-background dark:text-white px-4 py-2 rounded-t-lg rounded-br-lg">
                                         <p className="break-all">{m.message}</p>
@@ -73,7 +72,7 @@ export default function ChatContent({ chatId, chatList, setChatList }) {
                                 </div>
                             </div>
                         } else {
-                            return <div key={chat.id} className="w-full flex flex-col justify-end">
+                            return <div key={"mS" + m.id} className="w-full flex flex-col justify-end">
                                 <div className="max-w-[66.66%] ml-auto justify-end">
                                     <div className="bg-message-light dark:bg-message-dark dark:text-white px-4 py-2 rounded-t-lg rounded-bl-lg ml-auto">
                                         <div className="flex flex-row-reverse break-all" dangerouslySetInnerHTML={{ __html: m.message }}></div>
