@@ -57,6 +57,7 @@
 @media screen and (max-width: 768px) {
     .whatsapp-container {
         padding: 0px;
+        overflow: hidden;
     }
 
     .left-side {

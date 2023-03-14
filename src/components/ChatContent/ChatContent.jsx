@@ -57,6 +57,10 @@ export default function ChatContent({ chatId, chatList, setChatList }) {
         }
     };
 
+    function formatMessageBack(message) {
+        return message.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace('&lt;br&gt;', '<br>');
+    }
+
     return <div className="flex flex-col h-full w-full chat-background" ref={containerRef}>
         <div className="flex-grow overflow-y-scroll p-4" ref={chatContainer}>
             <div className="flex flex-col gap-2 mb-2">
@@ -75,7 +79,7 @@ export default function ChatContent({ chatId, chatList, setChatList }) {
                             return <div key={"mS" + m.id} className="w-full flex flex-col justify-end">
                                 <div className="max-w-[66.66%] ml-auto justify-end">
                                     <div className="bg-message-light dark:bg-message-dark dark:text-white px-4 py-2 rounded-t-lg rounded-bl-lg ml-auto">
-                                        <div className="flex flex-row-reverse break-all" dangerouslySetInnerHTML={{ __html: m.message }}></div>
+                                        <div className="flex flex-row-reverse break-all" dangerouslySetInnerHTML={{ __html: formatMessageBack(m.message) }}></div>
                                         <span className="text-gray-500 dark:text-gray-300 text-sm ml-1 flex flex-row-reverse">{m.timestamp}</span>
                                     </div>
                                 </div>

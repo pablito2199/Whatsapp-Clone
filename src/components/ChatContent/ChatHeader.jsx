@@ -9,7 +9,8 @@ export default function ChatHeader({ chatId, chatList, windowWidth, setSelectedC
     const chat = chatList.find((c) => c.id === chatId);
 
     return <div className="flex py-2 px-4 dark:border-b border-gray-700 bg-gray-100 dark:bg-intro-background dark:text-white items-center">
-        <div className="flex gap-2 items-center hover:cursor-pointer" onClick={() => setSelectedChatId(null)}>
+        <div className="flex gap-2 items-center hover:cursor-pointer" onClick={() => { windowWidth < 768 && setSelectedChatId(null) }} onMouseDown={(e) => e.currentTarget.classList.toggle("bg-gray-200 dark:bg-gray-700")}
+            onMouseUp={(e) => e.currentTarget.classList.toggle("bg-gray-200 dark:bg-gray-700")}>
             {
                 windowWidth < 768 && <div className="left-0 top-1/2">
                     <FontAwesomeIcon icon={faArrowLeft} className="text-gray-500 dark:text-gray-300" />
