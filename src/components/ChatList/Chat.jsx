@@ -10,7 +10,7 @@ export default function Chat({ chat, handleClick }) {
         <div className="flex justify-between items-center">
             <div className="flex items-center max-w-[100%] space-x-2">
                 <img alt={chat.name} src={user1} className='h-12 w-12 rounded-full' />
-                <div className="max-w-[75%]">
+                <div>
                     <div className={`text-lg dark:text-white ${chat.unread > 0 && "font-semibold"}`}>{chat.name}</div>
                     <div className={`text-gray-500 truncate text-sm dark:text-white ${chat.unread > 0 && " font-semibold"}`}>{chat.messages[chat.messages.length - 1].message.replace(/<br>/g, ' ')}</div>
                 </div>
