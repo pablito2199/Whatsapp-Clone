@@ -51,8 +51,8 @@ export default function Home() {
 	}
 
 	return <div className="relative max-h-screen">
-		<div className="bg-emerald-500 w-full h-[17.5%] z-10 fixed top-0 left-0 w-full h-1/5 transition-all"></div>
-		<div className="flex h-screen w-screen p-4 bg-gray-200 dark:bg-app-background z-1 relative shadow-lg">
+		{windowWidth >= 768 && <div className="bg-emerald-500 w-full h-[17.5%] z-10 fixed top-0 left-0 w-full h-1/5 transition-all"></div>}
+		<div className="flex h-screen w-screen p-4 bg-gray-200 dark:bg-app-background z-1 relative shadow-lg whatsapp-container">
 			{((windowWidth < 768 && selectedChatId == null) || windowWidth >= 768) && <div className="w-[30%] border-r border-gray-300 dark:border-gray-600 bg-white dark:bg-intro-background flex flex-col justify-between z-20 left-side" ref={leftSideRef}>
 				<ChatList chatList={chatList} handleClick={handleClick} />
 				<ThemeProvider>
@@ -72,7 +72,7 @@ export default function Home() {
 			}
 			{((windowWidth < 768 && selectedChatId != null) || windowWidth >= 768) && <div className="flex-1 flex flex-col z-20 right-side" ref={rightSideRef}>
 				<div>
-					{selectedChatId && <ChatHeader chatId={selectedChatId} chatList={chatList} />}
+					{selectedChatId && <ChatHeader chatId={selectedChatId} chatList={chatList} windowWidth={windowWidth} setSelectedChatId={setSelectedChatId} />}
 				</div>
 				<div className="flex-1 h-full overflow-y-auto">
 					{

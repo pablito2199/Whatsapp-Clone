@@ -5,7 +5,7 @@ import user1 from '../../images/user1.jpg'
 export default function Chat({ chat, handleClick }) {
 
     return <div key={chat.id}
-        className={`p-4 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer relative ${chat.isSelected ? "bg-gray-100 dark:bg-gray-800" : ""}`}
+        className={`flex p-4 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer relative ${chat.isSelected ? "bg-gray-100 dark:bg-gray-800" : ""}`}
         onClick={() => handleClick(chat)}>
         <div className="flex justify-between items-center">
             <div className="flex items-center max-w-[100%] space-x-2">

@@ -61,7 +61,7 @@ export default function ChatContent({ chatId, chatList, setChatList }) {
         <div className="flex-grow overflow-y-scroll p-4" ref={chatContainer}>
             <div className="flex flex-col gap-2 mb-2">
                 {
-                    chat.messages.map((m, index) => {
+                    chat.messages.map(m => {
                         if (!m.fromMe) {
                             return <div key={"mR" + m.id} className="w-full flex flex-col justify-end">
                                 <div className="max-w-[66.66%] mr-auto">
