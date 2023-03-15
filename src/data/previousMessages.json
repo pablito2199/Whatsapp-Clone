@@ -7,9 +7,15 @@
         "messages": [
             {
                 "id": 0,
-                "message": "Good morning.",
-                "timestamp": "Fri Mar 13 2023 12:48:20 GMT+0100 (hora estándar de Europa central)",
+                "message": "Good job!",
+                "timestamp": "Fri Mar 10 2023 05:48:20 GMT+0100 (hora estándar de Europa central)",
                 "fromMe": false
+            },
+            {
+                "id": 1,
+                "message": "Thanks 😄.",
+                "timestamp": "Mon Mar 14 2023 00:05:00 GMT+0100 (hora estándar de Europa central)",
+                "fromMe": true
             }
         ],
         "online": "online",
@@ -24,15 +30,9 @@
         "messages": [
             {
                 "id": 0,
-                "message": "Good job!",
-                "timestamp": "Fri Mar 10 2023 05:48:20 GMT+0100 (hora estándar de Europa central)",
+                "message": "Good morning.",
+                "timestamp": "Fri Mar 13 2023 12:48:20 GMT+0100 (hora estándar de Europa central)",
                 "fromMe": false
-            },
-            {
-                "id": 1,
-                "message": "Thanks 😄.",
-                "timestamp": "Mon Mar 14 2023 00:05:00 GMT+0100 (hora estándar de Europa central)",
-                "fromMe": true
             }
         ],
         "unread": 0
@@ -47,7 +47,7 @@
                 "id": 0,
                 "message": "The engine feels good. Much slower than before. Amazing.",
                 "timestamp": "Fri Dec 25 2022 17:03:20 GMT+0100 (hora estándar de Europa central)",
-                "fromMe": true
+                "fromMe": false
             }
         ],
         "online": "last seen Mar 10, 2023",
