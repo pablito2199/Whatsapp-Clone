@@ -3,25 +3,25 @@
 @import 'tailwindcss/utilities';
 
 .chat-background {
-    background-image: url('./images/whatsapp-background-light.png');
+    background-image: url('./assets/images/whatsapp-background-light.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .dark .chat-background {
-    background-image: url('./images/whatsapp-background-dark.png');
+    background-image: url('./assets/images/whatsapp-background-dark.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .no-chat-selected {
-    background-image: url('./images/no-chat-selected-light.png');
+    background-image: url('./assets/images/no-chat-selected-light.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .dark .no-chat-selected {
-    background-image: url('./images/no-chat-selected-dark.png');
+    background-image: url('./assets/images/no-chat-selected-dark.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -54,7 +54,7 @@
     background: #a1a1a1;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1039px) {
     .whatsapp-container {
         padding: 0px;
         overflow: hidden;

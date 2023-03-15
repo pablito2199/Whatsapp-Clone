@@ -1,7 +1,7 @@
 import { useEffect, useReducer } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 
-import imagen from '../images/not-found.png'
+import imagen from '../assets/images/not-found.png'
 
 export default function NotFound() {
     const navigate = useNavigate()

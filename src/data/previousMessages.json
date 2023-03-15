@@ -1,14 +1,14 @@
 [
     {
         "id": 1,
-        "name": "John Doe",
-        "image": "user1",
+        "name": "Jeff Bezos",
+        "image": "./bezos.png",
         "isSelected": false,
         "messages": [
             {
                 "id": 0,
-                "message": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.",
-                "timestamp": "10:00",
+                "message": "Good morning.",
+                "timestamp": "Fri Mar 13 2023 12:48:20 GMT+0100 (hora estándar de Europa central)",
                 "fromMe": false
             }
         ],
@@ -17,21 +17,21 @@
     },
     {
         "id": 2,
-        "name": "Jane Smith",
-        "image": "user1",
+        "name": "Pablo Tarrío",
+        "image": "./pablo.jpg",
         "isSelected": false,
         "time": "Yesterday",
         "messages": [
             {
                 "id": 0,
-                "message": "BLAAAA.",
-                "timestamp": "Yesterday",
+                "message": "Good job!",
+                "timestamp": "Fri Mar 10 2023 05:48:20 GMT+0100 (hora estándar de Europa central)",
                 "fromMe": false
             },
             {
                 "id": 1,
-                "message": "asdasdaaaaaaaaaaaaa aasdasdasd sadsasdasd daaaaaaaaaaaaaaaaaas.",
-                "timestamp": "Yesterday",
+                "message": "Thanks 😄.",
+                "timestamp": "Mon Mar 14 2023 00:05:00 GMT+0100 (hora estándar de Europa central)",
                 "fromMe": true
             }
         ],
@@ -39,14 +39,14 @@
     },
     {
         "id": 3,
-        "name": "Bob Johnson",
-        "image": "user1",
+        "name": "Fernando Alonso",
+        "image": "./alonso.jpg",
         "isSelected": false,
         "messages": [
             {
                 "id": 0,
-                "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "timestamp": "11/03/2023",
+                "message": "The engine feels good. Much slower than before. Amazing.",
+                "timestamp": "Fri Dec 25 2022 17:03:20 GMT+0100 (hora estándar de Europa central)",
                 "fromMe": true
             }
         ],

@@ -20,9 +20,13 @@ export default function Home() {
 			if (prevSelectedChat) {
 				prevSelectedChat.isSelected = false;
 			}
-			return savedChatList;
+			return savedChatList.sort((a, b) => {
+				return new Date(b.messages[b.messages.length - 1].timestamp) - new Date(a.messages[a.messages.length - 1].timestamp);
+			});
 		}
-		return previousMessages;
+		return previousMessages.sort((a, b) => {
+			return new Date(b.messages[b.messages.length - 1].timestamp) - new Date(a.messages[a.messages.length - 1].timestamp);
+		});
 	});
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -51,9 +55,9 @@ export default function Home() {
 	}
 
 	return <div className="relative max-h-screen">
-		{windowWidth >= 768 && <div className="bg-emerald-500 w-full h-[17.5%] z-10 fixed top-0 left-0 w-full h-1/5 transition-all"></div>}
+		{windowWidth >= 1039 && <div className="bg-emerald-500 w-full h-[17.5%] z-10 fixed top-0 left-0 w-full h-1/5 transition-all"></div>}
 		<div className="flex h-screen w-screen p-4 bg-gray-200 dark:bg-app-background z-1 relative shadow-lg whatsapp-container">
-			{((windowWidth < 768 && selectedChatId == null) || windowWidth >= 768) && <div className="w-[30%] border-r border-gray-300 dark:border-gray-600 bg-white dark:bg-intro-background flex flex-col justify-between z-20 left-side" ref={leftSideRef}>
+			{((windowWidth < 1039 && selectedChatId == null) || windowWidth >= 1039) && <div className="w-[30%] border-r border-gray-300 dark:border-gray-600 bg-white dark:bg-intro-background flex flex-col justify-between z-20 left-side" ref={leftSideRef}>
 				<ChatList chatList={chatList} handleClick={handleClick} />
 				<ThemeProvider>
 					<div className="flex justify-center items-center">
@@ -70,7 +74,7 @@ export default function Home() {
 				</ThemeProvider>
 			</div>
 			}
-			{((windowWidth < 768 && selectedChatId != null) || windowWidth >= 768) && <div className="flex-1 flex flex-col z-20 right-side" ref={rightSideRef}>
+			{((windowWidth < 1039 && selectedChatId != null) || windowWidth >= 1039) && <div className="flex-1 flex flex-col z-20 right-side" ref={rightSideRef}>
 				<div>
 					{selectedChatId && <ChatHeader chatId={selectedChatId} chatList={chatList} windowWidth={windowWidth} setSelectedChatId={setSelectedChatId} />}
 				</div>
