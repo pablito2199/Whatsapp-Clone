@@ -4,26 +4,10 @@
 
 .chat-background {
     background-image: url('./assets/images/whatsapp-background-light.png');
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .dark .chat-background {
     background-image: url('./assets/images/whatsapp-background-dark.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.no-chat-selected {
-    background-image: url('./assets/images/no-chat-selected-light.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.dark .no-chat-selected {
-    background-image: url('./assets/images/no-chat-selected-dark.png');
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar {

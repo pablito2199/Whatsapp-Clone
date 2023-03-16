@@ -1,13 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
-import GitHubButton from "../components/Buttons/GitHubButton";
-import LinkedInButton from "../components/Buttons/LinkedInButton";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
+import { ThemeProvider } from "../context/ThemeContext";
 import SwitchModeButton from "../components/Buttons/SwitchModeButton";
 import ChatContent from "../components/ChatContent/ChatContent";
 import ChatHeader from "../components/ChatContent/ChatHeader";
 import ChatList from "../components/ChatList/ChatList";
-import { ThemeProvider } from "../context/ThemeContext";
-
-import previousMessages from "../data/previousMessages.json"
+import SocialBrandButton from "../components/Buttons/SocialBrandButton";
+import previousMessages from "../data/previousMessages.json";
+import noChatSelectedGif from "../assets/gifs/no-chat-selected.gif";
 
 export default function Home() {
 
@@ -30,6 +31,8 @@ export default function Home() {
 	});
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+	const chatMap = useMemo(() => new Map(chatList.map(chat => [chat.id, chat])), [chatList]);
+
 	const leftSideRef = useRef(null);
 	const rightSideRef = useRef(null);
 
@@ -37,9 +40,10 @@ export default function Home() {
 		const handleResize = () => setWindowWidth(window.innerWidth);
 		window.addEventListener('resize', handleResize);
 
-		return () => window.removeEventListener('resize', handleResize);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
 	}, [windowWidth, selectedChatId]);
-
 
 	const handleClick = (chat) => {
 		const prevSelectedChat = chatList.find(c => c.isSelected);
@@ -66,8 +70,8 @@ export default function Home() {
 								<SwitchModeButton />
 							</div>
 							<div className="flex justify-center">
-								<GitHubButton />
-								<LinkedInButton />
+								<SocialBrandButton href="https://github.com/pablito2199/Whatsapp-Prototype" faIcon={faGithub} title="GitHub - pablito2199/Whatsapp-Prototype" />
+								<SocialBrandButton href="https://www.linkedin.com/in/pablo-tarr%C3%ADo-otero-806b52204/" faIcon={faLinkedin} title="LinkedIn - Pablo Tarrío Otero" />
 							</div>
 						</div>
 					</div>
@@ -76,15 +80,17 @@ export default function Home() {
 			}
 			{((windowWidth < 1039 && selectedChatId != null) || windowWidth >= 1039) && <div className="flex-1 flex flex-col z-20 right-side" ref={rightSideRef}>
 				<div>
-					{selectedChatId && <ChatHeader chatId={selectedChatId} chatList={chatList} windowWidth={windowWidth} setSelectedChatId={setSelectedChatId} />}
+					{selectedChatId && <ChatHeader chat={chatMap.get(selectedChatId)} windowWidth={windowWidth} setSelectedChatId={setSelectedChatId} />}
 				</div>
-				<div className="flex-1 h-full overflow-y-auto">
+				<div className="flex flex-1 h-full overflow-y-auto">
 					{
 						selectedChatId
 							?
-							<ChatContent chatList={chatList} setChatList={setChatList} chatId={selectedChatId} />
+							<ChatContent chat={chatMap.get(selectedChatId)} chatList={chatList} setChatList={setChatList} />
 							:
-							<div className="w-full h-full no-chat-selected" />
+							<div className="w-full bg-light-background dark:bg-intro-background border-b-8 border-unread-light dark:border-unread-dark flex justify-center items-center relative">
+								<img className="h-1/2" src={noChatSelectedGif} alt="" />
+							</div>
 					}
 				</div>
 			</div>

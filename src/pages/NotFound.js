@@ -1,43 +1,39 @@
-import { useEffect, useReducer } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import imagen from '../assets/images/not-found.png'
+import NotFoundButton from '../components/Buttons/NotFoundButton';
+import imagen from '../assets/images/not-found.png';
 
 export default function NotFound() {
-    const navigate = useNavigate()
-    const [timeout, dispatch] = useReducer(
-        (state, action) => {
-            switch (action) {
-                case 'tick': return state - 1
-                case 'end': return 0
-                default: throw new Error('invalid action')
-            }
-        },
-        10,
-        arg => arg
-    )
+    const HOME_URL = '/';
+    const TIMER_INTERVAL = 1000;
+
+    const navigate = useNavigate();
+    const [timer, setTimer] = useState(10);
 
     useEffect(() => {
-        const listener = setInterval(() => {
-            dispatch('tick')
-        }, 1000)
-        return () => clearInterval(listener)
-    }, [])
+        const interval = setInterval(() => {
+            setTimer(timer => timer - 1);
+        }, TIMER_INTERVAL);
+        if (timer === 0) {
+            clearInterval(interval);
+            navigate(HOME_URL);
+        }
+        return () => clearInterval(interval);
+    }, [navigate, timer]);
 
-    if (timeout === 0) {
-        return <Navigate to='/' />
-    } else {
-        return <div className="h-screen w-screen bg-gray-100 flex items-center">
+    return (
+        <div className="h-screen w-screen bg-gray-100 flex items-center">
             <div className="container flex flex-col md:flex-row items-center justify-center px-5 text-gray-700">
                 <div className="max-w-md">
-                    <p className="text-2xl md:text-3xl font-light leading-normal">Lo sentimos, no se pudo encontrar esta página.</p>
-                    <p className="mb-4">Volverás a la página principal en {timeout} segundos</p>
-                    <button onClick={() => navigate('/')} className="px-4 inline py-2 text-sm font-medium leading-5 shadow text-white transition-colors duration-150 border border-transparent focus:outline-none focus:shadow-outline-teal bg-message-dark active:bg-teal-800 hover:bg-teal-800">Volver a la página principal</button>
+                    <p className="text-2xl md:text-3xl font-light leading-normal">We are sorry, but we can't open this page.</p>
+                    <p className="mb-4">You'll return to the main page in {timer} seconds.</p>
+                    <NotFoundButton onClick={() => navigate(HOME_URL)} text="Return to the main page" />
                 </div>
                 <div className="max-w-lg">
                     <img alt="Page not found" src={imagen} className='h-28 w-28' />
                 </div>
             </div>
         </div>
-    }
+    );
 }

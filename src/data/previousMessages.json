@@ -9,17 +9,19 @@
                 "id": 0,
                 "message": "Good job!",
                 "timestamp": "Fri Mar 10 2023 05:48:20 GMT+0100 (hora estándar de Europa central)",
-                "fromMe": false
+                "fromMe": false,
+                "status": "sent"
             },
             {
                 "id": 1,
                 "message": "Thanks 😄.",
                 "timestamp": "Mon Mar 14 2023 00:05:00 GMT+0100 (hora estándar de Europa central)",
-                "fromMe": true
+                "fromMe": true,
+                "status": "seen"
             }
         ],
         "online": "online",
-        "unread": 2
+        "unread": 0
     },
     {
         "id": 2,
@@ -30,9 +32,17 @@
         "messages": [
             {
                 "id": 0,
+                "message": "Hello.",
+                "timestamp": "Fri Mar 13 2023 12:48:20 GMT+0100 (hora estándar de Europa central)",
+                "fromMe": true,
+                "status": "seen"
+            },
+            {
+                "id": 1,
                 "message": "Good morning.",
                 "timestamp": "Fri Mar 13 2023 12:48:20 GMT+0100 (hora estándar de Europa central)",
-                "fromMe": false
+                "fromMe": true,
+                "status": "received"
             }
         ],
         "unread": 0
@@ -45,12 +55,20 @@
         "messages": [
             {
                 "id": 0,
+                "message": "Hello.",
+                "timestamp": "Fri Dec 25 2022 17:03:20 GMT+0100 (hora estándar de Europa central)",
+                "fromMe": false,
+                "status": "sent"
+            },
+            {
+                "id": 1,
                 "message": "The engine feels good. Much slower than before. Amazing.",
                 "timestamp": "Fri Dec 25 2022 17:03:20 GMT+0100 (hora estándar de Europa central)",
-                "fromMe": false
+                "fromMe": false,
+                "status": "sent"
             }
         ],
         "online": "last seen Mar 10, 2023",
-        "unread": 1
+        "unread": 2
     }
 ]

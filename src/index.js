@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+import "./index.css";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 
