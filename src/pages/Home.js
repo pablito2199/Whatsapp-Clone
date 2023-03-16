@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import { ThemeProvider } from "../context/ThemeContext";
@@ -31,8 +31,6 @@ export default function Home() {
 	});
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-	const chatMap = useMemo(() => new Map(chatList.map(chat => [chat.id, chat])), [chatList]);
-
 	const leftSideRef = useRef(null);
 	const rightSideRef = useRef(null);
 
@@ -43,9 +41,9 @@ export default function Home() {
 		return () => {
 			window.removeEventListener('resize', handleResize);
 		};
-	}, [windowWidth, selectedChatId]);
+	}, []);
 
-	const handleClick = (chat) => {
+	const handleClick = useCallback((chat) => {
 		const prevSelectedChat = chatList.find(c => c.isSelected);
 		if (prevSelectedChat) {
 			prevSelectedChat.isSelected = false;
@@ -54,9 +52,11 @@ export default function Home() {
 		chat.isSelected = true;
 		chat.unread = 0;
 		setSelectedChatId(chat.id);
-		setChatList([...chatList]);
+		setChatList(prevChatList => [...prevChatList]);
 		localStorage.setItem('chatList', JSON.stringify(chatList));
-	}
+	}, [chatList]);
+
+	const chatMap = useMemo(() => new Map(chatList.map(chat => [chat.id, chat])), [chatList]);
 
 	return <div className="relative max-h-screen">
 		{windowWidth >= 1039 && <div className="bg-emerald-500 w-full h-[17.5%] z-10 fixed top-0 left-0 w-full h-1/5 transition-all"></div>}
