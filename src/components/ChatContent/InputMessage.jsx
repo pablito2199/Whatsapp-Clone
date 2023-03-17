@@ -71,8 +71,8 @@ export default function InputMessage({ chatId, message, setMessage, handleSendMe
     ), [handleSendMessage]);
 
     return (
-        <div className={`flex items-center justify-center ${window.innerWidth < 1039 && "mb-4"}`}>
-            <div className={`dark:border-t border-gray-700 bg-gray-100 dark:bg-intro-background ${window.innerWidth < 1039 ? "flex ml-4 mr-1 rounded-full items-center w-[90%]" : "w-full"}`}>
+        <div className={`flex items-center ${window.innerWidth < 1039 && "mb-4 ml-2"}`}>
+            <div className={`dark:border-t border-gray-700 bg-gray-100 dark:bg-intro-background ${window.innerWidth < 1039 ? "flex mr-1 rounded-full items-center w-[93%]" : "w-full"}`}>
                 <div className={`flex justify-between items-center ${window.innerWidth < 1039 ? "mx-8 w-full" : "bg-gray-100 dark:bg-intro-background w-full px-4 py-2"}`}>
                     <div className="flex items-center w-full">
                         {emojiIcon}
