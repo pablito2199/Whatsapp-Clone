@@ -10,7 +10,7 @@ export default function AttachButton({ faPaperclip, attachRef, showDropDown, set
         setShowDropDown(prevState => !prevState);
     }, [setShowDropDown]);
 
-    const paperClipIcon = <FontAwesomeIcon icon={faPaperclip} title="Attach" className="text-gray-500 h-6 mr-4 cursor-pointer" onClick={handleIconClick} />;
+    const paperClipIcon = <FontAwesomeIcon icon={faPaperclip} title="Attach" className="text-gray-500 h-6 cursor-pointer" onClick={handleIconClick} />;
 
     return (
         <div ref={attachRef} className="relative">

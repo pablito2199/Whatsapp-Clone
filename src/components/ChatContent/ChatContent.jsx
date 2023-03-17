@@ -2,24 +2,38 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import MessageList from "./MessageList";
 import InputMessage from "./InputMessage";
+import ScrollDownButton from "../Buttons/ScrollDownButton";
 import { formatMessageJSON } from "../../utils";
 
 export default function ChatContent({ chat, chatList, setChatList }) {
 
     const [message, setMessage] = useState("");
+    const [showScrollButton, setShowScrollButton] = useState(false);
 
     const containerRef = useRef(null);
-    const chatContainer = useRef(null);
+    const chatContainerRef = useRef(null);
 
     useEffect(() => {
-        chatContainer.current.scrollTo({
-            top: chatContainer.current.scrollHeight,
+        chatContainerRef.current.scrollTo({
+            top: chatContainerRef.current.scrollHeight,
             behavior: "smooth"
         });
     }, [chat]);
 
-    const handleSendMessage = useCallback((e) => {
+    useEffect(() => {
+        const chatContainer = chatContainerRef.current;
+        const handleScroll = () => {
+            const currentScrollPosition = chatContainer.scrollTop + 500;
+            const maxScrollPosition = chatContainer.scrollHeight - chatContainer.offsetHeight;
+            setShowScrollButton(currentScrollPosition < maxScrollPosition);
+        };
+        chatContainer.addEventListener("scroll", handleScroll);
+        return () => {
+            chatContainer.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
+    const handleSendMessage = useCallback((e) => {
         const regexSpaces = /^\s*$/;
 
         const saveMessage = (messageData) => {
@@ -35,11 +49,7 @@ export default function ChatContent({ chat, chatList, setChatList }) {
             setChatList(updatedChatList);
         }
 
-        if (e.shiftKey && e.key === 'Enter') {
-            e.preventDefault();
-            setMessage(message + '\n');
-        } else if (!(e.shiftKey && e.key === 'Enter') && e.key === "Enter" && !regexSpaces.test(message)) {
-
+        const sendMessage = () => {
             const messageData = {
                 "id": chat.messages.length,
                 "message": formatMessageJSON(message),
@@ -52,16 +62,28 @@ export default function ChatContent({ chat, chatList, setChatList }) {
 
             setMessage("");
 
-            chatContainer.current.scrollTo({
-                top: chatContainer.current.scrollHeight,
+            chatContainerRef.current.scrollTo({
+                top: chatContainerRef.current.scrollHeight,
                 behavior: "smooth"
             });
+        }
+
+        if (window.innerWidth >= 1039) {
+            if (e.shiftKey && e.key === 'Enter') {
+                e.preventDefault();
+                setMessage(message + '\n');
+            } else if (!(e.shiftKey && e.key === 'Enter') && e.key === "Enter" && !regexSpaces.test(message)) {
+                sendMessage();
+            }
+        } else {
+            sendMessage();
         }
     }, [chat, message, chatList, setChatList,]);
 
     return (
-        <div className="flex flex-col h-full w-full chat-background" ref={containerRef}>
-            <MessageList chat={chat} chatContainer={chatContainer} />
+        <div className="flex flex-col h-full w-full chat-background relative" ref={containerRef}>
+            {showScrollButton && <ScrollDownButton chatContainerRef={chatContainerRef} title="Scroll to bottom" />}
+            <MessageList chat={chat} chatContainerRef={chatContainerRef} />
             <InputMessage chatId={chat.id} message={message} setMessage={setMessage} handleSendMessage={handleSendMessage} />
         </div>
     );

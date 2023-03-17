@@ -4,7 +4,7 @@ import ReceivedMessage from "./MessageTypes/ReceivedMessage";
 import SentMessage from "./MessageTypes/SentMessage";
 import monthNames from "../../data/months.json"
 
-export default function MessageList({ chat, chatContainer }) {
+export default function MessageList({ chat, chatContainerRef }) {
 
     const formatDayHeader = (day) => {
         const date = new Date(day);
@@ -35,7 +35,7 @@ export default function MessageList({ chat, chatContainer }) {
         }, {});
 
     return (
-        <div className="flex-grow overflow-y-scroll p-4" ref={chatContainer}>
+        <div className="flex-grow overflow-y-scroll p-4" ref={chatContainerRef}>
             <div className="flex flex-col space-y-2 mb-2">
                 {
                     Object.entries(messagesByDay).map(([day, messages]) => {
