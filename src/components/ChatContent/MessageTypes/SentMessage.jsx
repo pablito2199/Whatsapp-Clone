@@ -6,7 +6,7 @@ import { formatDateToHours, formatMessageHTML } from "../../../utils";
 
 export default function SentMessage({ message, status, timestamp }) {
 
-    const icon = status === "seen" ? faCheckDouble : faCheck;
+    const icon = status === "seen" || status === "received" ? faCheckDouble : faCheck;
 
     return (
         <div className="w-full flex flex-col justify-end">

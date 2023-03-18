@@ -25,23 +25,23 @@
     },
     {
         "id": 2,
-        "name": "Pablo Tarrío",
-        "image": "./pablo.jpg",
+        "name": "Homer Simpson",
+        "image": "./homer.jpg",
         "isSelected": false,
         "time": "Yesterday",
         "messages": [
             {
                 "id": 0,
-                "message": "Hello.",
+                "message": "Bart, this is your father.",
                 "timestamp": "Fri Mar 13 2023 12:48:20 GMT+0100 (hora estándar de Europa central)",
-                "fromMe": true,
+                "fromMe": false,
                 "status": "seen"
             },
             {
                 "id": 1,
-                "message": "Good morning.",
+                "message": "Do you know where the remote is? I looked all over the house.",
                 "timestamp": "Fri Mar 13 2023 12:48:20 GMT+0100 (hora estándar de Europa central)",
-                "fromMe": true,
+                "fromMe": false,
                 "status": "received"
             }
         ],

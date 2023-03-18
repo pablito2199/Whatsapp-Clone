@@ -1,19 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import LastMessage from "./LastMessage";
 import UnreadBadge from "./UnreadBadge";
 import { formatDateForListDisplay } from "../../utils";
 const images = require.context("../../assets/images");
 
-export default function Chat({ chat, handleClick }) {
+export default function Chat({ chat, handleClick, handleContextMenu, setContextMenuVisible }) {
+
     const { id, name, image, messages, isSelected, unread } = chat;
     const lastMessage = messages[messages.length - 1];
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (!e.target.closest(".context-menu")) {
+                setContextMenuVisible(false);
+            }
+        };
+
+        document.addEventListener("click", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, [setContextMenuVisible]);
 
     return (
         <div
             key={id}
             className={`w-full max-w-[100%] flex p-4 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer relative ${isSelected ? "bg-gray-100 dark:bg-gray-800" : ""}`}
             onClick={() => handleClick(chat)}
+            onContextMenu={handleContextMenu}
         >
             <div className="flex justify-between items-center w-full max-w-[100%]">
                 <div className="flex items-center w-full space-x-2 max-w-[100%]">
