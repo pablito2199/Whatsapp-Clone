@@ -14,6 +14,6 @@ export default function Header() {
                 <IconButton icon={faCircleNotch} className="h-4 p-2 text-gray-400 rounded-full cursor-pointer" title="States" />
                 <IconButton icon={faUsers} className="h-4 p-2 text-gray-400 rounded-full cursor-pointer" title="Communities" />
             </div>
-        </div>
+        </div >
     );
 }

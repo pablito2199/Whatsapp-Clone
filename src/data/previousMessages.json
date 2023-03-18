@@ -1,74 +1,238 @@
 [
     {
         "id": 1,
-        "name": "Jeff Bezos",
         "image": "./bezos.png",
         "isSelected": false,
         "messages": [
             {
                 "id": 0,
-                "message": "Good job!",
-                "timestamp": "Fri Mar 10 2023 05:48:20 GMT+0100 (hora estándar de Europa central)",
                 "fromMe": false,
+                "message": "Good job!",
+                "timestamp": "Fri Mar 09 2023 05:48:20 GMT+0100 (hora estándar de Europa central)",
                 "status": "sent"
             },
             {
                 "id": 1,
-                "message": "Thanks 😄.",
-                "timestamp": "Mon Mar 14 2023 00:05:00 GMT+0100 (hora estándar de Europa central)",
                 "fromMe": true,
+                "message": "Thanks 😄.",
+                "timestamp": "Mon Mar 09 2023 00:05:00 GMT+0100 (hora estándar de Europa central)",
                 "status": "seen"
             }
         ],
+        "name": "Jeff Bezos",
         "online": "online",
-        "unread": 0
+        "unread": false,
+        "unreadMessages": 0
     },
     {
         "id": 2,
-        "name": "Homer Simpson",
         "image": "./homer.jpg",
         "isSelected": false,
-        "time": "Yesterday",
         "messages": [
             {
                 "id": 0,
+                "fromMe": false,
                 "message": "Bart, this is your father.",
                 "timestamp": "Fri Mar 13 2023 12:48:20 GMT+0100 (hora estándar de Europa central)",
-                "fromMe": false,
                 "status": "seen"
             },
             {
                 "id": 1,
+                "fromMe": false,
                 "message": "Do you know where the remote is? I looked all over the house.",
                 "timestamp": "Fri Mar 13 2023 12:48:20 GMT+0100 (hora estándar de Europa central)",
-                "fromMe": false,
                 "status": "received"
             }
         ],
-        "unread": 0
+        "name": "Homer Simpson",
+        "unread": false,
+        "unreadMessages": 0
     },
     {
         "id": 3,
-        "name": "Fernando Alonso",
         "image": "./alonso.jpg",
         "isSelected": false,
         "messages": [
             {
                 "id": 0,
-                "message": "Hello.",
-                "timestamp": "Fri Dec 25 2022 17:03:20 GMT+0100 (hora estándar de Europa central)",
                 "fromMe": false,
+                "message": "Hello.",
+                "timestamp": "Fri Mar 14 2023 17:03:20 GMT+0100 (hora estándar de Europa central)",
                 "status": "sent"
             },
             {
                 "id": 1,
-                "message": "The engine feels good. Much slower than before. Amazing.",
-                "timestamp": "Fri Dec 25 2022 17:03:20 GMT+0100 (hora estándar de Europa central)",
                 "fromMe": false,
+                "message": "The engine feels good. Much slower than before. Amazing.",
+                "timestamp": "Fri Mar 14 2023 17:03:20 GMT+0100 (hora estándar de Europa central)",
                 "status": "sent"
             }
         ],
-        "online": "last seen Mar 10, 2023",
-        "unread": 2
+        "name": "Fernando Alonso",
+        "online": "last seen Mar 14, 2023",
+        "unread": true,
+        "unreadMessages": 2
+    },
+    {
+        "id": 4,
+        "image": "./gandhi.jpg",
+        "isSelected": false,
+        "messages": [
+            {
+                "id": 0,
+                "fromMe": false,
+                "message": "The purpose of this message is to let you know that you are an amazing person. Keep doing like that and you will be the best person in the world.😊",
+                "timestamp": "Thu Mar 9 2023 14:03:20 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            },
+            {
+                "id": 1,
+                "fromMe": false,
+                "message": "The purpose of this message is to let you know that you are an amazing person. Keep doing like that and you will be the best person in the world.😊",
+                "timestamp": "Fri Mar 10 2023 14:03:20 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            },
+            {
+                "id": 2,
+                "fromMe": false,
+                "message": "The purpose of this message is to let you know that you are an amazing person. Keep doing like that and you will be the best person in the world.😊",
+                "timestamp": "Sat Mar 11 2023 14:03:20 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            },
+            {
+                "id": 3,
+                "fromMe": false,
+                "message": "The purpose of this message is to let you know that you are an amazing person. Keep doing like that and you will be the best person in the world.😊",
+                "timestamp": "Sun Mar 12 2023 14:03:20 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            },
+            {
+                "id": 4,
+                "fromMe": false,
+                "message": "The purpose of this message is to let you know that you are an amazing person. Keep doing like that and you will be the best person in the world.😊",
+                "timestamp": "Mon Mar 13 2023 14:03:20 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            },
+            {
+                "id": 5,
+                "fromMe": false,
+                "message": "The purpose of this message is to let you know that you are an amazing person. Keep doing like that and you will be the best person in the world.😊",
+                "timestamp": "Tue Mar 14 2023 14:03:20 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            },
+            {
+                "id": 6,
+                "fromMe": false,
+                "message": "The purpose of this message is to let you know that you are an amazing person. Keep doing like that and you will be the best person in the world.😊",
+                "timestamp": "Wed Mar 15 2023 14:03:20 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            },
+            {
+                "id": 7,
+                "fromMe": false,
+                "message": "The purpose of this message is to let you know that you are an amazing person. Keep doing like that and you will be the best person in the world.😊",
+                "timestamp": "Thu Mar 16 2023 14:03:20 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            },
+            {
+                "id": 8,
+                "fromMe": false,
+                "message": "The purpose of this message is to let you know that you are an amazing person. Keep doing like that and you will be the best person in the world.😊",
+                "timestamp": "Fri Mar 17 2023 14:03:20 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            },
+            {
+                "id": 9,
+                "fromMe": false,
+                "message": "The purpose of this message is to let you know that you are an amazing person. Keep doing like that and you will be the best person in the world.😊",
+                "timestamp": "Sat Mar 18 2023 14:03:20 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            },
+            {
+                "id": 10,
+                "fromMe": false,
+                "message": "The purpose of this message is to let you know that you are an amazing person. Keep doing like that and you will be the best person in the world.😊",
+                "timestamp": "Sat Mar 18 2023 14:03:20 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            }
+        ],
+        "name": "Mahatma Gandhi",
+        "unread": true,
+        "unreadMessages": 10
+    },
+    {
+        "id": 5,
+        "image": "./lightnining-mcqueen.jpg",
+        "isSelected": false,
+        "messages": [
+            {
+                "id": 0,
+                "fromMe": false,
+                "message": "Speed. I'm speed.",
+                "timestamp": "Mon Mar 18 2023 00:05:00 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            },
+            {
+                "id": 1,
+                "fromMe": false,
+                "message": "1 winner, 42 losers. I eat losers for breakfast.",
+                "timestamp": "Mon Mar 18 2023 00:05:00 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            },
+            {
+                "id": 2,
+                "fromMe": false,
+                "message": "I'm faster than fast, I'm quicker than quick.",
+                "timestamp": "Mon Mar 18 2023 00:05:00 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            },
+            {
+                "id": 3,
+                "fromMe": true,
+                "message": "Hey Lightning! You ready?",
+                "timestamp": "Mon Mar 18 2023 00:07:00 GMT+0100 (hora estándar de Europa central)",
+                "status": "seen"
+            }
+        ],
+        "name": "Lightning McQueen",
+        "online": "online",
+        "unread": false,
+        "unreadMessages": 0
+    },
+    {
+        "id": 6,
+        "image": "./the-rock.jpg",
+        "isSelected": false,
+        "messages": [
+            {
+                "id": 0,
+                "fromMe": false,
+                "message": "In life, things happen. You may not want them to, but they do.",
+                "timestamp": "Mon Mar 18 2023 00:05:00 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            }
+        ],
+        "name": "The Rock",
+        "online": "online",
+        "unread": false,
+        "unreadMessages": 0
+    },
+    {
+        "id": 7,
+        "image": "./paul-mccartney.jpg",
+        "isSelected": false,
+        "messages": [
+            {
+                "id": 0,
+                "fromMe": false,
+                "message": "Imagine all the people.",
+                "timestamp": "Mon Mar 10 2023 00:05:00 GMT+0100 (hora estándar de Europa central)",
+                "status": "sent"
+            }
+        ],
+        "name": "Paul McCartney",
+        "online": "online",
+        "unread": true,
+        "unreadMessages": 1
     }
 ]

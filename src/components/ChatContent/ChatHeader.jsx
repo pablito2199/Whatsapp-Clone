@@ -32,7 +32,7 @@ export default function ChatHeader({ chat, windowWidth, setSelectedChatId }) {
                     }
                 </div>
             </div>
-            <div className="flex flex-row-reverse w-full mr-4">
+            <div className="flex flex-row-reverse w-[10%] mr-4">
                 <IconButton icon={faBars} className="h-5 p-2 text-gray-400 rounded-full cursor-pointer" title="Menu" />
             </div>
         </div>

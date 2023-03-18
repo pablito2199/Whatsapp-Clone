@@ -2,6 +2,11 @@ function getDateString(date) {
     return date.toDateString();
 }
 
+export const saveChatList = (updatedChatList, setChatList) => {
+    setChatList(updatedChatList);
+    localStorage.setItem('chatList', JSON.stringify(updatedChatList));
+};
+
 export const formatDateForListDisplay = (inputDate) => {
     const date = inputDate instanceof Date ? inputDate : new Date(inputDate);
 

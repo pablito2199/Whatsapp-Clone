@@ -2,10 +2,10 @@ module.exports = {
 	content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
 	darkMode: "class",
 	mode: "jit",
+	plugins: [],
 	purge: {
 		content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
 	},
-	plugins: [],
 	theme: {
 		extend: {
 			colors: {

@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
+import ScrollDownButton from "../Buttons/ScrollDownButton";
 import MessageList from "./MessageList";
 import InputMessage from "./InputMessage";
-import ScrollDownButton from "../Buttons/ScrollDownButton";
-import { formatMessageJSON } from "../../utils";
+import { formatMessageJSON, saveChatList } from "../../utils";
 
 export default function ChatContent({ chat, chatList, setChatList }) {
 
@@ -45,8 +45,7 @@ export default function ChatContent({ chat, chatList, setChatList }) {
                 .filter(c => c.id !== chat.id)
                 .concat(updatedChat)
                 .sort((a, b) => new Date(b.messages[b.messages.length - 1].timestamp) - new Date(a.messages[a.messages.length - 1].timestamp));
-            localStorage.setItem("chatList", JSON.stringify(updatedChatList));
-            setChatList(updatedChatList);
+            saveChatList(updatedChatList, setChatList);
         }
 
         const sendMessage = () => {

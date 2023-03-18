@@ -2,6 +2,10 @@
 
 In the project directory, you can run:
 
+### `npm install --force`
+
+Install all the neccessary dependencies for the project.\
+
 ### `npm start`
 
 Runs the app in the development mode.\

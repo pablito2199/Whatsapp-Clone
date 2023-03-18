@@ -16,8 +16,6 @@ export default function InputMessage({ chatId, message, setMessage, handleSendMe
     const attachRef = useRef(null);
     const textareaRef = useRef(null);
 
-    const handleEmojiClick = useCallback((emoji) => setMessage(prevMessage => prevMessage + emoji.native), [setMessage]);
-
     useEffect(() => {
         function handleClickOutsideEmojiButton(event) {
             if (pickerRef.current && !pickerRef.current.contains(event.target)) {
@@ -49,6 +47,8 @@ export default function InputMessage({ chatId, message, setMessage, handleSendMe
             textareaRef.current.focus();
         }
     }, [chatId]);
+
+    const handleEmojiClick = useCallback((emoji) => setMessage(prevMessage => prevMessage + emoji.native), [setMessage]);
 
     const emojiIcon = useMemo(() => (
         <EmojiButton faSmile={faSmile} pickerRef={pickerRef} handleEmojiClick={handleEmojiClick} showEmojiPicker={showEmojiPicker} setShowEmojiPicker={setShowEmojiPicker} />
