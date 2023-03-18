@@ -46,6 +46,6 @@ As a clone, the features of the original app are reduced to the following:
 
 ## Chat settings
 
-The clone is built as a serverless app, so for saving the chats data, they are saved in the local storage of your explorer. This means that you will be the only person to see your chats, and you will be the only person to delete them. If you want to delete the chat data, to load the default chats, you can do it in your explorer by doing:
+The clone is built as a serverless app, so for saving the chats' data in somewhere, they are saved in the local storage of your explorer. This means that you will be the only person to see your chats, and you will be the only person to manage them. If you want to delete the actual's chat data, to load the default chats, you can do it in your explorer by doing:
 
 `Inspect (F12) > Application > Local Storage > https://pablito2199-whatsapp.vercel.app/ > Delete the key "chatList"`
