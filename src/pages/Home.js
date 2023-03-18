@@ -80,12 +80,12 @@ export default function Home() {
 		{windowWidth >= 1039 && <div className="bg-emerald-500 w-full h-[17.5%] z-10 fixed top-0 left-0 w-full h-1/5 transition-all"></div>}
 		<div className="flex h-screen w-screen p-4 bg-gray-200 dark:bg-app-background z-1 relative shadow-lg whatsapp-container">
 			{((windowWidth < 1039 && selectedChatId == null) || windowWidth >= 1039) && (
-				<div className="w-[30%] border-r border-gray-300 dark:border-gray-600 bg-white dark:bg-intro-background flex flex-col justify-between z-20 left-side" ref={leftSideRef}>
+				<div className="w-[30%] border-r border-gray-300 dark:border-gray-600 bg-white dark:bg-intro-background flex flex-col z-20 left-side" ref={leftSideRef}>
 					<div className="dark:bg-app-background">
 						<Header />
 						<FilterBar filterUnread={filterUnread} setFilterUnread={setFilterUnread} setSearchQuery={setSearchQuery} />
 					</div>
-					<div className="flex flex-col items-center overflow-y-auto">
+					<div className="flex flex-col overflow-y-auto dark:bg-app-background">
 						<ChatList chatList={filteredChats} setChatList={setChatList} handleClick={handleClick} setSelectedChatId={setSelectedChatId} />
 					</div>
 					<ThemeProvider>
