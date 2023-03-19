@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
-import ScrollDownButton from "../Buttons/ScrollDownButton";
-import MessageList from "./MessageList";
-import InputMessage from "./InputMessage";
 import { formatMessageJSON, saveChatList } from "../../utils";
+import ScrollDownButton from "../Buttons/ScrollDownButton";
+import InputMessage from "./InputMessage";
+import MessageList from "./MessageList";
 
 export default function ChatContent({ chat, chatList, setChatList }) {
 

@@ -1,16 +1,16 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
-import Header from "../components/Headers/Header";
-import FilterBar from "../components/Filters/FilterBar";
-import ChatList from "../components/ChatList/ChatList";
-import { ThemeProvider } from "../context/ThemeContext";
-import SwitchModeButton from "../components/Buttons/SwitchModeButton";
-import SocialBrandButton from "../components/Buttons/SocialBrandButton";
-import ChatHeader from "../components/ChatContent/ChatHeader";
-import ChatContent from "../components/ChatContent/ChatContent";
-import previousMessages from "../data/previousMessages.json";
 import noChatSelectedGif from "../assets/gifs/no-chat-selected.gif";
+import SocialBrandButton from "../components/Buttons/SocialBrandButton";
+import SwitchModeButton from "../components/Buttons/SwitchModeButton";
+import ChatContent from "../components/ChatContent/ChatContent";
+import ChatHeader from "../components/ChatContent/ChatHeader";
+import ChatList from "../components/ChatList/ChatList";
+import FilterBar from "../components/Filters/FilterBar";
+import Header from "../components/Headers/Header";
+import { ThemeProvider } from "../context/ThemeContext";
+import previousMessages from "../data/previousMessages.json";
 import { saveChatList } from "../utils";
 
 export default function Home() {

@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import NotFoundButton from '../components/Buttons/NotFoundButton';
 import imagen from '../assets/images/not-found.png';
+import NotFoundButton from '../components/Buttons/NotFoundButton';
 
 export default function NotFound() {
     const HOME_URL = '/';

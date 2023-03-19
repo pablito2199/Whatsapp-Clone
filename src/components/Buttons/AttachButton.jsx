@@ -1,6 +1,6 @@
-import React, { useCallback } from "react";
+import { faCamera, faFile, faImages, faSquarePollVertical, faStickyNote, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCamera, faFile, faUser, faSquarePollVertical, faImages, faStickyNote } from "@fortawesome/free-solid-svg-icons";
+import React, { useCallback } from "react";
 
 import DropDownItem from "../ChatContent/DropDownItem";
 

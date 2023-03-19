@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 
+import { formatDateForListDisplay } from "../../utils";
 import LastMessage from "./LastMessage";
 import UnreadBadge from "./UnreadBadge";
-import { formatDateForListDisplay } from "../../utils";
 
 const images = require.context("../../assets/images");
 

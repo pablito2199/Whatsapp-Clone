@@ -1,8 +1,8 @@
 import React from "react";
 
+import monthNames from "../../data/months.json";
 import ReceivedMessage from "./MessageTypes/ReceivedMessage";
 import SentMessage from "./MessageTypes/SentMessage";
-import monthNames from "../../data/months.json"
 
 export default function MessageList({ chat, chatContainerRef }) {
 

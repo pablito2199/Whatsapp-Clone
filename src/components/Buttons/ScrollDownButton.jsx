@@ -1,6 +1,6 @@
-import React, { useCallback } from "react";
+import { faAngleDoubleDown, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
+import React, { useCallback } from "react";
 
 export default function ScrollDownButton({ chatContainerRef, title }) {
 

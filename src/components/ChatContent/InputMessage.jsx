@@ -1,11 +1,11 @@
+import { faSmile } from '@fortawesome/free-regular-svg-icons';
+import { faMicrophone, faPaperclip, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ReactTextareaAutosize from "react-textarea-autosize";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMicrophone, faPaperclip, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import { faSmile } from '@fortawesome/free-regular-svg-icons';
 
-import EmojiButton from "../Buttons/EmojiButton";
 import AttachButton from "../Buttons/AttachButton";
+import EmojiButton from "../Buttons/EmojiButton";
 
 export default function InputMessage({ chatId, message, setMessage, handleSendMessage }) {
 

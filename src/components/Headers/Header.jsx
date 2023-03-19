@@ -1,5 +1,5 @@
-import React from "react";
 import { faBars, faCircleNotch, faCommenting, faUserCircle, faUsers } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
 
 import IconButton from "../Buttons/IconButton";
 

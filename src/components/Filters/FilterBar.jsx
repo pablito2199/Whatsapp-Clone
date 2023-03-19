@@ -1,7 +1,7 @@
 import React from "react";
 
-import SearchBar from "./SearchBar";
 import FilterButton from "./FilterButton";
+import SearchBar from "./SearchBar";
 
 export default function FilterBar({ filterUnread, setFilterUnread, setSearchQuery }) {
 

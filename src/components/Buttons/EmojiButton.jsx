@@ -1,5 +1,5 @@
-import React, { useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useCallback } from "react";
 
 import EmojiPicker from "../Pickers/EmojiPicker";
 
